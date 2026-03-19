@@ -51,7 +51,10 @@
     "test:e2e": "playwright test --config playwright.config.ts",
     "prepare": "husky",
     "postinstall": "node scripts/postinstall.js",
-    "test:packaged:bun": "vitest run tests/integration/bundled-bun-packaged.test.ts"
+    "test:packaged:bun": "vitest run tests/integration/bundled-bun-packaged.test.ts",
+    "agent:install-browsers": "npx playwright install",
+    "agent:cli": "ts-node server/browser-use-cli.ts",
+    "agent:http-dev": "ts-node server/agent-server.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
@@ -133,7 +136,9 @@
     "web-tree-sitter": "^0.25.10",
     "ws": "^8.18.3",
     "xlsx-republish": "^0.20.3",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "browser-use": "^0.5.0",
+    "playwright": "^1.58.2"
   },
   "devDependencies": {
     "@electron/fuses": "^1.8.0",
